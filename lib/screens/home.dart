@@ -8,48 +8,69 @@ class MyStatelessWidget extends StatelessWidget {
    
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      initialIndex: 1,
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('My Dictionary'),
-          bottom: const TabBar(
-            tabs: <Widget>[
-              Tab(
-                icon: Icon(Icons.add),
-              ),
-              Tab(
-                icon: Icon(Icons.menu),//beach_access_sharp
-              ),
-              Tab(
-                icon: Icon(Icons.quiz),//brightness_5_sharp
-              ),
-            ],
+    return Container(
+      decoration: BoxDecoration(color: Colors.purple),
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.only(top: 50),
+            child: Text("MyDictionary", style: TextStyle(
+              fontSize: 40,
+              color: Colors.white,
+              decoration: TextDecoration.underline,
+            ),),
+          ),
+          Container(
+          margin: EdgeInsets.only(top: 100),
+          child: FlatButton(
+            child: Text(
+              'Kelime Ekle',
+              style: TextStyle(fontSize: 25.0, color: Colors.white),
+            ),
+            color: Colors.purple,             
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyCustomForm())),
           ),
         ),
-        body:  TabBarView(
-          children: <Widget>[
-            Center(
-              child: MyCustomForm(), 
+        Container(
+          margin: EdgeInsets.only(top: 35),
+          child: FlatButton(
+            child: Text(
+              'Sözlüğe Göz At',
+              style: TextStyle(fontSize: 25.0, color: Colors.white),
             ),
-            Center(
-              child: MyList(),
-            ),
-            Center(
-              child: test(),
-            ),
-          ],
+            color: Colors.purple,             
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyList())),
+          ),
         ),
-        /*floatingActionButton: FloatingActionButton(
-          onPressed: kelimeGonder,
-          tooltip: 'rastgele kelime getir',
-          child: const Icon(Icons.done),
-        )*/
+        Container(
+          margin: EdgeInsets.only(top: 35),
+          child: FlatButton(
+            child: Text(
+              'Kendini Test Et',
+              style: TextStyle(fontSize: 25.0, color: Colors.white),
+            ),
+            color: Colors.purple,             
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => test())),
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 35),
+          child: FlatButton(
+            child: Text(
+              'Hakkımda',
+              style: TextStyle(fontSize: 25.0, color: Colors.white),
+            ),
+            color: Colors.purple,             
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyCustomForm())),
+          ),
+        ),
+        ],
       ),
     );
-  }
+  } 
 }
+
+ 
 
 
 

@@ -2,12 +2,32 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class test extends StatelessWidget {
-  test({Key? key}) : super(key: key);
+  test();
 
-  List<String> ingilizce = ["computer", "pencil", "fish","bottle","oil","apple","ship","sword","mouse"];
-  List<String> turkce = ["bilgisayar","kalem","balık","sise","yag","elma","gemi","kılıc","fare"];
+  List<String> ingilizce = [
+    "computer",
+    "pencil",
+    "fish",
+    "bottle",
+    "oil",
+    "apple",
+    "ship",
+    "sword",
+    "mouse"
+  ];
+  List<String> turkce = [
+    "bilgisayar",
+    "kalem",
+    "balık",
+    "sise",
+    "yag",
+    "elma",
+    "gemi",
+    "kılıc",
+    "fare"
+  ];
 
-  void rastgele(){
+  void rastgele() {
     var rng = Random();
     for (var i = 0; i < 10; i++) {
       var secim = rng.nextInt(ingilizce.length);
@@ -17,35 +37,40 @@ class test extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-        child: TextFormField(
-          decoration: const InputDecoration(
-            border: UnderlineInputBorder(),
-            labelText: 'İngilizce Kelime',
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Kendini Test Et"),
+      ),
+      body: Column(children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextFormField(
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'İngilizce Kelime',
+            ),
           ),
         ),
-      ),
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-        child: TextFormField(
-          decoration: const InputDecoration(
-            border: UnderlineInputBorder(),
-            labelText: 'Turkce Karsiligini Giriniz',
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextFormField(
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Turkce Karsiligini Giriniz',
+            ),
           ),
         ),
-      ),
-      TextButton(
-        style: TextButton.styleFrom(
-          primary: Colors.blue,
-          onSurface: Colors.red,
+        FlatButton(
+          child: Text(
+            'Rastgele',
+            style: TextStyle(fontSize: 25.0, color: Colors.white),
+          ),
+          color: Colors.purple,
+          onPressed: rastgele,
         ),
-        onPressed: rastgele,
-        child: Text('Rastgele'),
-      ),
-      SnackBarPage(),
-    ]);
+        SnackBarPage(),
+      ]),
+    );
   }
 
   press() {
@@ -79,6 +104,4 @@ class SnackBarPage extends StatelessWidget {
       ),
     );
   }
-
-
 }

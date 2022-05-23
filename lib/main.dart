@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/home.dart';
+import 'package:flutter_application_1/screens/addword.dart';
+import 'package:flutter_application_1/screens/exam.dart';
+import 'package:flutter_application_1/screens/myList.dart';
 
 void main() => runApp(const MyApp());
 

@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 
 class MyList extends StatefulWidget {
-  MyList({Key? key}): super(key: key);
+  MyList();
 
   @override
   State<MyList> createState() => _MyListState();
 }
 
 class _MyListState extends State<MyList> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
+  
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: _buildList()
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Kelimelere Göz At"),
+      ),
+      body: _buildList()
     );
   }
 }
