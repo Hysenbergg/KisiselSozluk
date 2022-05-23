@@ -60,13 +60,16 @@ class test extends StatelessWidget {
             ),
           ),
         ),
-        FlatButton(
-          child: Text(
-            'Rastgele',
-            style: TextStyle(fontSize: 25.0, color: Colors.white),
+        Container(
+          padding: EdgeInsets.only(top: 25, bottom: 25),
+          child: FlatButton(
+            child: Text(
+              'Rastgele',
+              style: TextStyle(fontSize: 25.0, color: Colors.white),
+            ),
+            color: Colors.purple,
+            onPressed: rastgele,
           ),
-          color: Colors.purple,
-          onPressed: rastgele,
         ),
         SnackBarPage(),
       ]),
@@ -85,6 +88,9 @@ class SnackBarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
+        style: ElevatedButton.styleFrom(textStyle: TextStyle(
+          fontSize: 25,
+        )),
         onPressed: () {
           final snackBar = SnackBar(
             content: const Text('Soruyu Doğru Cevapladınız.'),

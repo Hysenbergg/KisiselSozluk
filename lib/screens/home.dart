@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/addword.dart';
 import 'package:flutter_application_1/screens/exam.dart';
 import 'package:flutter_application_1/screens/myList.dart';
+import 'package:flutter_application_1/screens/aboutme.dart';
 
 class MyStatelessWidget extends StatelessWidget {
    MyStatelessWidget({Key? key}) : super(key: key);
@@ -61,7 +62,7 @@ class MyStatelessWidget extends StatelessWidget {
               style: TextStyle(fontSize: 25.0, color: Colors.white),
             ),
             color: Colors.purple,             
-            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyCustomForm())),
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => aboutMe())),
           ),
         ),
         ],
