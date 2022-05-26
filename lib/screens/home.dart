@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/words.dart';
+import 'package:flutter_application_1/utils/dbhelper.dart';
 import 'package:flutter_application_1/screens/addword.dart';
 import 'package:flutter_application_1/screens/exam.dart';
 import 'package:flutter_application_1/screens/myList.dart';
 import 'package:flutter_application_1/screens/aboutme.dart';
 
-class MyStatelessWidget extends StatelessWidget {
+class MyStatelessWidget extends StatefulWidget {
    MyStatelessWidget({Key? key}) : super(key: key);
-   
+
+  @override
+  State<MyStatelessWidget> createState() => _MyStatelessWidgetState();
+}
+
+class _MyStatelessWidgetState extends State<MyStatelessWidget> {
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,7 +22,7 @@ class MyStatelessWidget extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.only(top: 50),
+            padding: EdgeInsets.only(top: 125),
             child: Text("MyDictionary", style: TextStyle(
               fontSize: 40,
               color: Colors.white,

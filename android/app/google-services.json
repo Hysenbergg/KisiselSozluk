@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "739922466140",
+    "project_id": "mydictionary-7076f",
+    "storage_bucket": "mydictionary-7076f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:739922466140:android:2d993dbaa42d5b1868dd99",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "739922466140-103t8ad4735vmcsa7sdrplgqmjn7m1u2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1bZw76xn3kdZiqpUo-OWYtS8f2uz3Bj8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "739922466140-103t8ad4735vmcsa7sdrplgqmjn7m1u2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "739922466140-tndqvi6jdb95b1hj22754d6c7snp94n2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.sozluk"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

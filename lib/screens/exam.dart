@@ -71,7 +71,7 @@ class test extends StatelessWidget {
             onPressed: rastgele,
           ),
         ),
-        SnackBarPage(),
+        examSnackBarPage(),
       ]),
     );
   }
@@ -81,8 +81,8 @@ class test extends StatelessWidget {
   }
 }
 
-class SnackBarPage extends StatelessWidget {
-  const SnackBarPage();
+class examSnackBarPage extends StatelessWidget {
+  const examSnackBarPage();
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +97,7 @@ class SnackBarPage extends StatelessWidget {
             action: SnackBarAction(
               label: 'Kapat',
               onPressed: () {
-                // Some code to undo the change.
+                
               },
             ),
           );
