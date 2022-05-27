@@ -18,14 +18,14 @@ class _MyStatelessWidgetState extends State<MyStatelessWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: Colors.purple),
+      decoration: BoxDecoration(color: Colors.amber),
       child: Column(
         children: [
           Container(
             padding: EdgeInsets.only(top: 125),
             child: Text("MyDictionary", style: TextStyle(
               fontSize: 40,
-              color: Colors.white,
+              color: Colors.black,
               decoration: TextDecoration.underline,
             ),),
           ),
@@ -34,9 +34,9 @@ class _MyStatelessWidgetState extends State<MyStatelessWidget> {
           child: FlatButton(
             child: Text(
               'Kelime Ekle',
-              style: TextStyle(fontSize: 25.0, color: Colors.white),
+              style: TextStyle(fontSize: 25.0, color: Colors.black),
             ),
-            color: Colors.purple,             
+            color: Colors.amber,             
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyCustomForm())),
           ),
         ),
@@ -45,9 +45,9 @@ class _MyStatelessWidgetState extends State<MyStatelessWidget> {
           child: FlatButton(
             child: Text(
               'Sözlüğe Göz At',
-              style: TextStyle(fontSize: 25.0, color: Colors.white),
+              style: TextStyle(fontSize: 25.0, color: Colors.black),
             ),
-            color: Colors.purple,             
+            color: Colors.amber,             
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyList())),
           ),
         ),
@@ -56,9 +56,9 @@ class _MyStatelessWidgetState extends State<MyStatelessWidget> {
           child: FlatButton(
             child: Text(
               'Kendini Test Et',
-              style: TextStyle(fontSize: 25.0, color: Colors.white),
+              style: TextStyle(fontSize: 25.0, color: Colors.black),
             ),
-            color: Colors.purple,             
+            color: Colors.amber,             
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => test())),
           ),
         ),
@@ -67,9 +67,9 @@ class _MyStatelessWidgetState extends State<MyStatelessWidget> {
           child: FlatButton(
             child: Text(
               'Hakkımda',
-              style: TextStyle(fontSize: 25.0, color: Colors.white),
+              style: TextStyle(fontSize: 25.0, color: Colors.black),
             ),
-            color: Colors.purple,             
+            color: Colors.amber,             
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => aboutMe())),
           ),
         ),

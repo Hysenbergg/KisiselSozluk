@@ -46,7 +46,7 @@ class test extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: TextFormField(
             decoration: const InputDecoration(
-              border: UnderlineInputBorder(),
+              border: OutlineInputBorder(),
               labelText: 'İngilizce Kelime',
             ),
           ),
@@ -55,7 +55,7 @@ class test extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: TextFormField(
             decoration: const InputDecoration(
-              border: UnderlineInputBorder(),
+              border: OutlineInputBorder(),
               labelText: 'Turkce Karsiligini Giriniz',
             ),
           ),
@@ -65,9 +65,9 @@ class test extends StatelessWidget {
           child: FlatButton(
             child: Text(
               'Rastgele',
-              style: TextStyle(fontSize: 25.0, color: Colors.white),
+              style: TextStyle(fontSize: 25.0, color: Colors.black),
             ),
-            color: Colors.purple,
+            color: Colors.amber,
             onPressed: rastgele,
           ),
         ),

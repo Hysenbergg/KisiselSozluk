@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/models/words.dart';
-import 'package:flutter_application_1/utils/dbhelper.dart';
-import 'package:flutter_application_1/models/words.dart';
 
 class MyCustomForm extends StatefulWidget {
   MyCustomForm();
@@ -46,7 +43,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
           ),
           Padding(
             //padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            padding: EdgeInsets.only(left: 10, right: 10, top: 30, bottom: 20),
+            padding: EdgeInsets.only(left: 10, right: 10, top: 30, bottom: 40),
             child: TextField(
               controller: secondController,
               decoration: InputDecoration(
@@ -56,12 +53,14 @@ class _MyCustomFormState extends State<MyCustomForm> {
             ),
           ),
           RaisedButton(
-            //child: addSnackBarPage(),
-            child: Text("Kelimeleri Kaydet"),
+            padding: EdgeInsets.all(30),
+            color: Colors.amber,
+            child: Text("Kelimeleri Kaydet", style: TextStyle(
+              fontSize: 20,
+            ),),
             onPressed: (){
               String first = firstController.text;
-              String second = secondController.text;
-              //_insert(first, second); 
+              String second = secondController.text; 
             }
           )          
         ],
@@ -72,49 +71,5 @@ class _MyCustomFormState extends State<MyCustomForm> {
   kelimeGonder() {
     print("Kelimeleri kaydettik.");
   }
-
-  /*void _insert(String first, String second) async{
-    Map<String, dynamic> row = {
-      DatabaseHelper.columnFirstWord : first,
-      DatabaseHelper.columnSecondWord : second
-    };
-
-    Words words = Words.fromMap(row);
-    final id = await dbHelper.insert(words);
-    _showMessageInScaffold("inserted row id : $id");
-  }*/
 }
-
-/*class addSnackBarPage extends StatelessWidget {               // Bu sınıf uyarı görebilmek için olusturdum. Normal buton yerine koydum. 
-  const addSnackBarPage();
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(textStyle: TextStyle(
-          fontSize: 25,
-        )),
-        onPressed: () {
-          String first = firstController.text;
-          final snackBar = SnackBar(                         // Butona basıldığında altta kullanıcıya görebilmesi için açılan uyarı kısmı.
-            content: const Text('Kelime Sözlüğe Eklendi. '),
-            action: SnackBarAction(
-              label: 'Kapat',
-              onPressed: () {
-                // Some code to undo the change.
-              },
-            ),
-          );
-
-          // Find the ScaffoldMessenger in the widget tree
-          // and use it to show a SnackBar.
-          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        },
-        child: const Text('Kelimeyi Kaydet'),
-      ),
-    );
-  }
-}*/
-
 
