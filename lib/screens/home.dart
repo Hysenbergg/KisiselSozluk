@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/models/words.dart';
-import 'package:flutter_application_1/utils/dbhelper.dart';
 import 'package:flutter_application_1/screens/addword.dart';
 import 'package:flutter_application_1/screens/exam.dart';
 import 'package:flutter_application_1/screens/myList.dart';
