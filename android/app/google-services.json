@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "912769294289",
-    "project_id": "mydictionary-884a1",
-    "storage_bucket": "mydictionary-884a1.appspot.com"
+    "project_number": "802139998827",
+    "project_id": "mydictionary-e6097",
+    "storage_bucket": "mydictionary-e6097.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:912769294289:android:eab55727f821cb3d520af0",
+        "mobilesdk_app_id": "1:802139998827:android:90c3741ae877c6572b3f2e",
         "android_client_info": {
           "package_name": "com.example.flutter_application_1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "912769294289-00r8dro733m44mds09psj379n1k6n9as.apps.googleusercontent.com",
+          "client_id": "802139998827-g4ih55odv2147rnodrij0f5rrkg04chj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCXHBKFIOE23XKn7qU99dd0YMtFws4o0sk"
+          "current_key": "AIzaSyBuEM69nQmHaJDTZHTKxuRctn3OvPlZRvk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "912769294289-00r8dro733m44mds09psj379n1k6n9as.apps.googleusercontent.com",
+              "client_id": "802139998827-g4ih55odv2147rnodrij0f5rrkg04chj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

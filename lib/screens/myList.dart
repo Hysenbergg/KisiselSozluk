@@ -10,8 +10,6 @@ class MyList extends StatefulWidget {
 
 class _MyListState extends State<MyList> {
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,9 +43,7 @@ Widget _buildList() {
       _tile(
           'Mouse', 'Fare'),
     ],
-  );
-
-  
+  );  
 }
 
 ListTile _tile(String title, String subtitle) {
