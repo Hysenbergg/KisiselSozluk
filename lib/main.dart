@@ -1,28 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/home.dart';
-import 'package:flutter_application_1/screens/addword.dart';
-import 'package:flutter_application_1/screens/exam.dart';
 import 'package:flutter_application_1/screens/kayitformu.dart';
-import 'package:flutter_application_1/screens/myList.dart';
-import 'package:flutter_application_1/screens/aboutme.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'screens/anasayfa.dart';
+import 'screens/kayitekrani.dart';
 
-void main() => runApp(const MyApp());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  runApp((Yapilacaklar()));
 
-  static const String _title = 'Kisisel Sozluk';
+}
+
+class Yapilacaklar extends StatelessWidget{
+  const Yapilacaklar({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
+      theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      title: _title,
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-      ),
-      home: KayitFormu(),
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, kullaniciVerisi){
+          if(kullaniciVerisi.hasData){
+            return AnaSayfa();
+          }else{
+            return KayitEkrani();
+          }
+        }
+      )
     );
   }
 }
+
 

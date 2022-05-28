@@ -64,7 +64,7 @@ class _KayitFormuState extends State<KayitFormu> {
                       email = alinanEmail;
                     },
                     validator: (alinanEmail) {
-                      return alinanEmail!.contains("@")
+                      return alinanEmail!.contains("@")   // Burada mail alanında @ isaetinin olup olmadıgı kontrolünü yaptık.
                           ? null
                           : "Gecersiz email girdiniz!";
                     },
