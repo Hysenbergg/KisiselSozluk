@@ -114,19 +114,19 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Stream<List<Word>> readWords() => FirebaseFirestore.instance
-    .collection('words')
+    .collection('word')
     .snapshots()
     .map((snapshot) => 
       snapshot.docs.map((doc) => Word.fromJson(doc.data())).toList());
 
-  void createWord({required String firstword, required String secondword}) async{
-    final docWord = FirebaseFirestore.instance.collection('words').doc();
+  Future createWord({required String firstword, required String secondword}) async{
+    final docWord = FirebaseFirestore.instance.collection('word').doc();
 
     final word = Word(
       id: docWord.id,
       firstword: firstword,
       secondword: secondword,
-    );
+    );;
     final json = word.toJson();
 
     await docWord.set(json);

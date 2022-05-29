@@ -45,7 +45,7 @@ class _MyListState extends State<MyList> {
   );
 
   Stream<List<Word>> readWords() => FirebaseFirestore.instance
-    .collection('words')
+    .collection('word')
     .snapshots()
     .map((snapshot) => 
       snapshot.docs.map((doc) => Word.fromJson(doc.data())).toList());

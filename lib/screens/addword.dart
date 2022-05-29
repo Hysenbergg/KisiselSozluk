@@ -61,7 +61,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   }
 
   Future createWord(Word word) async{
-    final docWord = FirebaseFirestore.instance.collection('words').doc();
+    final docWord = FirebaseFirestore.instance.collection('word').doc();
     word.id = docWord.id;
 
     final json = word.toJson();
