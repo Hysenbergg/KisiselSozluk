@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_application_1/main.dart';
 
 class MyCustomForm extends StatefulWidget {
-  MyCustomForm();
+  const MyCustomForm({ Key? key }) : super(key: key);
 
   @override
   State<MyCustomForm> createState() => _MyCustomFormState();
@@ -9,6 +11,8 @@ class MyCustomForm extends StatefulWidget {
 
 class _MyCustomFormState extends State<MyCustomForm> {
 
+  final controllerFirstWord = TextEditingController();
+  final controllerSecondWord = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +25,10 @@ class _MyCustomFormState extends State<MyCustomForm> {
           Padding(
             padding: EdgeInsets.only(left: 10, right: 10, top: 30),
             child: TextField(
+              controller: controllerFirstWord,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'İngilizce Kelimeyi Giriniz',
+                labelText: 'İlk Kelimeyi Giriniz',
               ),
             ),
           ),
@@ -31,9 +36,10 @@ class _MyCustomFormState extends State<MyCustomForm> {
             //padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             padding: EdgeInsets.only(left: 10, right: 10, top: 30, bottom: 40),
             child: TextField(
+              controller: controllerSecondWord,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Turkce Kelimeyi Giriniz',
+                labelText: 'İkinci Kelimeyi Giriniz',
               ),
             ),
           ),
@@ -44,7 +50,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
               fontSize: 20,
             ),),
             onPressed: (){
-
+              final word = Word(firstword: controllerFirstWord.text, secondword: controllerSecondWord.text);
+              createWord(word);
+              Navigator.pop(context);
             }
           )          
         ],
@@ -52,8 +60,12 @@ class _MyCustomFormState extends State<MyCustomForm> {
     );
   }
 
-  kelimeGonder() {
-    print("Kelimeleri kaydettik.");
+  Future createWord(Word word) async{
+    final docWord = FirebaseFirestore.instance.collection('words').doc();
+    word.id = docWord.id;
+
+    final json = word.toJson();
+    await docWord.set(json);
   }
 }
 

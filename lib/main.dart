@@ -6,7 +6,12 @@ import 'package:flutter_application_1/screens/myList.dart';
 import 'package:flutter_application_1/screens/exam.dart';
 import 'package:flutter_application_1/screens/aboutme.dart';
 
-void main() => runApp(const MyApp());
+Future main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  runApp(MyApp()); 
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -107,4 +112,47 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+  Stream<List<Word>> readWords() => FirebaseFirestore.instance
+    .collection('words')
+    .snapshots()
+    .map((snapshot) => 
+      snapshot.docs.map((doc) => Word.fromJson(doc.data())).toList());
+
+  void createWords({required String firstword, required String secondword}) async{
+    final docWord = FirebaseFirestore.instance.collection('words').doc();
+
+    final word = Word(
+      id: docWord.id,
+      firstword: firstword,
+      secondword: secondword,
+    );
+    final json = word.toJson();
+
+    await docWord.set(json);
+  }
+}
+
+class Word {
+  String id;
+  final String firstword;
+  final String secondword;
+
+  Word({
+    this.id = '',
+    required this.firstword,
+    required this.secondword,
+  });
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'firstword': firstword,
+    'secondword': secondword,
+  }; 
+
+  static Word fromJson(Map<String, dynamic> json) => Word(
+    id: json['id'],
+    firstword: json['firstword'],
+    secondword: json['secondword'],
+  ); 
 }
