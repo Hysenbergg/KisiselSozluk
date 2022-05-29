@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
     .map((snapshot) => 
       snapshot.docs.map((doc) => Word.fromJson(doc.data())).toList());
 
-  void createWords({required String firstword, required String secondword}) async{
+  void createWord({required String firstword, required String secondword}) async{
     final docWord = FirebaseFirestore.instance.collection('words').doc();
 
     final word = Word(
