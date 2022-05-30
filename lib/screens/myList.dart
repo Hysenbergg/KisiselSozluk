@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_application_1/main.dart';
+import 'package:flutter_application_1/screens/asasdasd.dart';
 
 class MyList extends StatefulWidget {
   const MyList({ Key? key }) : super(key: key);
@@ -38,14 +39,14 @@ class _MyListState extends State<MyList> {
   }  
 }
 
- Widget buildWord(Word word) => ListTile(
-    leading: CircleAvatar(child: Text(word.id)),
+  Widget buildWord(Word word) => ListTile(
+    leading: CircleAvatar(child: Icon(Icons.api_sharp),),
     title: Text(word.firstword),
     subtitle: Text(word.secondword),
   );
 
   Stream<List<Word>> readWords() => FirebaseFirestore.instance
-    .collection('word')
+    .collection('kelime')
     .snapshots()
     .map((snapshot) => 
       snapshot.docs.map((doc) => Word.fromJson(doc.data())).toList());

@@ -1,8 +1,15 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-class test extends StatelessWidget {
+class test extends StatefulWidget {
   test();
+
+  @override
+  State<test> createState() => _testState();
+}
+
+class _testState extends State<test> {
 
   List<String> ingilizce = [
     "computer",
@@ -15,6 +22,7 @@ class test extends StatelessWidget {
     "sword",
     "mouse"
   ];
+
   List<String> turkce = [
     "bilgisayar",
     "kalem",
@@ -29,7 +37,7 @@ class test extends StatelessWidget {
 
   void rastgele() {
     var rng = Random();
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 1; i++) {
       var secim = rng.nextInt(ingilizce.length);
       print(ingilizce[secim] + ": " + turkce[secim]);
     }
@@ -47,7 +55,7 @@ class test extends StatelessWidget {
           child: TextFormField(
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              labelText: 'İngilizce Kelime',
+              labelText: 'Hedef Dilin Kelimesi: ',
             ),
           ),
         ),
@@ -56,7 +64,7 @@ class test extends StatelessWidget {
           child: TextFormField(
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              labelText: 'Turkce Karsiligini Giriniz',
+              labelText: 'Anadildeki karşılığını giriniz: ',
             ),
           ),
         ),
@@ -74,10 +82,6 @@ class test extends StatelessWidget {
         examSnackBarPage(),
       ]),
     );
-  }
-
-  press() {
-    print("press calıstı");
   }
 }
 

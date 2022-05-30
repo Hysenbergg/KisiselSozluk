@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_application_1/main.dart';
+import 'package:flutter_application_1/screens/asasdasd.dart';
 
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({ Key? key }) : super(key: key);
@@ -61,7 +62,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   }
 
   Future createWord(Word word) async{
-    final docWord = FirebaseFirestore.instance.collection('word').doc();
+    final docWord = FirebaseFirestore.instance.collection('kelime').doc();
     word.id = docWord.id;
 
     final json = word.toJson();
